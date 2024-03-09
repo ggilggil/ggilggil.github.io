@@ -1,67 +1,40 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>간단한 계산기</title>
+<title>폭죽 버튼</title>
 <style>
     body {
         font-family: Arial, sans-serif;
         text-align: center;
     }
-    input[type="number"] {
-        width: 100px;
-        margin: 10px;
-    }
-    button {
-        padding: 10px 20px;
-        margin: 10px;
-        cursor: pointer;
+    #fireworks {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
     }
 </style>
 </head>
 <body>
 
-<h2>간단한 계산기</h2>
-<input type="number" id="num1">
-<input type="number" id="num2">
+<h2>폭죽 버튼</h2>
+<button onclick="fireworks()">폭죽</button>
 
-<br><br>
-
-<button onclick="add()">덧셈</button>
-<button onclick="subtract()">뺄셈</button>
-<button onclick="multiply()">곱셈</button>
-<button onclick="divide()">나눗셈</button>
-
-<p id="result"></p>
+<div id="fireworks"></div>
 
 <script>
-    function add() {
-        let num1 = parseFloat(document.getElementById('num1').value);
-        let num2 = parseFloat(document.getElementById('num2').value);
-        document.getElementById('result').innerHTML = num1 + num2;
-    }
+    function fireworks() {
+        var fireworks = document.getElementById("fireworks");
+        fireworks.style.display = "block";
 
-    function subtract() {
-        let num1 = parseFloat(document.getElementById('num1').value);
-        let num2 = parseFloat(document.getElementById('num2').value);
-        document.getElementById('result').innerHTML = num1 - num2;
-    }
-
-    function multiply() {
-        let num1 = parseFloat(document.getElementById('num1').value);
-        let num2 = parseFloat(document.getElementById('num2').value);
-        document.getElementById('result').innerHTML = num1 * num2;
-    }
-
-    function divide() {
-        let num1 = parseFloat(document.getElementById('num1').value);
-        let num2 = parseFloat(document.getElementById('num2').value);
-        if (num2 === 0) {
-            document.getElementById('result').innerHTML = "0으로 나눌 수 없습니다.";
-        } else {
-            document.getElementById('result').innerHTML = num1 / num2;
-        }
+        setTimeout(function() {
+            fireworks.style.display = "none";
+        }, 5000); // 5초 후에 폭죽 효과 사라지게 설정
     }
 </script>
 
