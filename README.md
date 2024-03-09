@@ -18,8 +18,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        display: none;
-        animation: rainbow 3s infinite;
+        animation: none;
     }
 
     @keyframes rainbow {
@@ -69,9 +68,9 @@
     var lastClickTime = 0;
 
     function startRainbow() {
-        document.querySelector('.rainbow').style.display = 'block';
+        document.querySelector('.rainbow').style.animation = 'rainbow 3s infinite';
         setTimeout(function() {
-            document.querySelector('.rainbow').style.display = 'none';
+            document.querySelector('.rainbow').style.animation = 'none';
         }, 3000); // 3초 후에 무지개 색 반짝 효과 사라지게 설정
     }
 
@@ -80,10 +79,6 @@
         if (currentTime - lastClickTime < 3000) {
             count += 2;
             document.querySelector('.counter').textContent = count;
-            document.querySelector('.rainbow').style.animationDuration = '0.1s';
-            setTimeout(function() {
-                document.querySelector('.rainbow').style.animationDuration = '3s';
-            }, 1000); // 1초 후에 다시 3초로 설정
         } else {
             count++;
             document.querySelector('.counter').textContent = count;
