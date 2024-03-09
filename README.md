@@ -17,6 +17,7 @@
         position: absolute;
         top: 0;
         left: 0;
+        display: none;
         animation: rainbow 3s infinite;
     }
 
