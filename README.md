@@ -9,6 +9,7 @@
         background-color: black;
         overflow: hidden;
         height: 100vh;
+        position: relative;
     }
 
     .rainbow {
@@ -46,19 +47,48 @@
         cursor: pointer;
         outline: none;
     }
+
+    .counter {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        color: white;
+    }
 </style>
 </head>
 <body>
 
 <div class="rainbow"></div>
 <button onclick="startRainbow()">무지개 색 반짝</button>
+<button onclick="increaseCounter()">카운터 증가</button>
+<div class="counter">0</div>
 
 <script>
+    var count = 0;
+    var lastClickTime = 0;
+
     function startRainbow() {
         document.querySelector('.rainbow').style.display = 'block';
         setTimeout(function() {
             document.querySelector('.rainbow').style.display = 'none';
         }, 3000); // 3초 후에 무지개 색 반짝 효과 사라지게 설정
+    }
+
+    function increaseCounter() {
+        var currentTime = new Date().getTime();
+        if (currentTime - lastClickTime < 3000) {
+            count += 2;
+            document.querySelector('.counter').textContent = count;
+            document.querySelector('.rainbow').style.animationDuration = '0.1s';
+            setTimeout(function() {
+                document.querySelector('.rainbow').style.animationDuration = '3s';
+            }, 1000); // 1초 후에 다시 3초로 설정
+        } else {
+            count++;
+            document.querySelector('.counter').textContent = count;
+        }
+        lastClickTime = currentTime;
     }
 </script>
 
