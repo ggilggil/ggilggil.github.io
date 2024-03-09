@@ -3,30 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>반짝반짝</title>
+<title>무지개 색 반짝</title>
 <style>
     body {
         background-color: black;
         overflow: hidden;
+        height: 100vh;
     }
 
-    .blink {
+    .rainbow {
         width: 100%;
         height: 100%;
         position: absolute;
         top: 0;
         left: 0;
-        background-color: white;
-        animation: blink 0.5s infinite alternate;
+        animation: rainbow 3s infinite;
     }
 
-    @keyframes blink {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
+    @keyframes rainbow {
+        0% { background-color: red; }
+        14% { background-color: orange; }
+        28% { background-color: yellow; }
+        42% { background-color: green; }
+        57% { background-color: blue; }
+        71% { background-color: indigo; }
+        85% { background-color: violet; }
+        100% { background-color: red; }
     }
 
     button {
@@ -47,15 +49,15 @@
 </head>
 <body>
 
-<div class="blink"></div>
-<button onclick="blink()">반짝</button>
+<div class="rainbow"></div>
+<button onclick="startRainbow()">무지개 색 반짝</button>
 
 <script>
-    function blink() {
-        document.querySelector('.blink').style.display = 'block';
+    function startRainbow() {
+        document.querySelector('.rainbow').style.display = 'block';
         setTimeout(function() {
-            document.querySelector('.blink').style.display = 'none';
-        }, 1000); // 1초 후에 반짝 효과 사라지게 설정
+            document.querySelector('.rainbow').style.display = 'none';
+        }, 3000); // 3초 후에 무지개 색 반짝 효과 사라지게 설정
     }
 </script>
 
