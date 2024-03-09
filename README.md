@@ -1,48 +1,63 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>반짝반짝 버튼</title>
+<title>반짝반짝</title>
 <style>
     body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background-color: #f0f0f0; /* 배경색 추가 */
-        transition: background-color 0.5s ease; /* 반짝이는 효과를 위한 트랜지션 */
+        background-color: black;
+        overflow: hidden;
     }
+
+    .blink {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: white;
+        animation: blink 0.5s infinite alternate;
+    }
+
+    @keyframes blink {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
     button {
-        padding: 10px 20px;
-        margin: 10px;
-        cursor: pointer;
-        font-size: 16px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 15px 30px;
+        font-size: 20px;
         background-color: #3498db;
-        color: #fff;
+        color: white;
         border: none;
         border-radius: 5px;
+        cursor: pointer;
         outline: none;
-        transition: background-color 0.5s ease; /* 버튼 색상 전환을 위한 트랜지션 */
-    }
-    button:hover {
-        background-color: #2980b9; /* 마우스 호버 시 버튼 색상 변경 */
-    }
-    button:active {
-        animation: flash 0.5s ease; /* 버튼을 클릭할 때 반짝이는 애니메이션 적용 */
-    }
-    @keyframes flash {
-        0%, 100% {
-            background-color: #3498db;
-        }
-        50% {
-            background-color: #f1c40f;
-        }
     }
 </style>
 </head>
 <body>
 
-<h2>반짝반짝 버튼</h2>
-<button>반짝</button>
+<div class="blink"></div>
+<button onclick="blink()">반짝</button>
+
+<script>
+    function blink() {
+        document.querySelector('.blink').style.display = 'block';
+        setTimeout(function() {
+            document.querySelector('.blink').style.display = 'none';
+        }, 1000); // 1초 후에 반짝 효과 사라지게 설정
+    }
+</script>
 
 </body>
 </html>
