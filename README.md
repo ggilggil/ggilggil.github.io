@@ -76,7 +76,7 @@
 
     function increaseCounter() {
         var currentTime = new Date().getTime();
-        if (currentTime - lastClickTime < 500) {
+        if (currentTime - lastClickTime <1000) {
             count += ㅋㅋ;
             document.querySelector('.counter').textContent = count;
         } else {
