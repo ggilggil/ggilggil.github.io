@@ -59,22 +59,22 @@
 <body>
 
 <div class="rainbow"></div>
-<button onclick="startRainbow()">빤짝이 배</button>
-<button onclick="startRainbow()">카운터 증가</button>
+<button onclick="startRainbow()">빤짝이_배</button>
+<button onclick="startRainbow()">카운터_증가</button>
 <div class="counter">0</div>
 
 <script>
     var count = 0;
     var lastClickTime = 0;
 
-    function startRainbow() {
+    function 빤짝이_배() {
         document.querySelector('.rainbow').style.animation = 'rainbow 3s infinite';
         setTimeout(function() {
             document.querySelector('.rainbow').style.animation = 'none';
         }, 3000); // 3초 후에 무지개 색 반짝 효과 사라지게 설정
     }
 
-    function increaseCounter() {
+    function 카운터_증가() {
         var currentTime = new Date().getTime();
         if (currentTime - lastClickTime <500) {
             count += 1;
