@@ -59,8 +59,7 @@
 <body>
 
 <div class="rainbow"></div>
-<button onclick="startRainbow()">무지개 색 반짝</button>
-<button onclick="increaseCounter(1)">배씨</button>
+<button onclick="startRainbow()">배씨 머리</button>
 <div class="counter">0</div>
 
 <script>
