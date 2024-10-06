@@ -64,7 +64,7 @@
 <div class="counter">0</div>
 
 <script>
-    var count = 1;
+    var count = 0;
     var lastClickTime = 0;
 
     function rainbow() {
