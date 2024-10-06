@@ -48,7 +48,7 @@
     }
 
     .counter {
-        position: relative;
+        position: absolute;
         top: 10px;
         right: 10px;
         font-size: 24px;
@@ -67,14 +67,14 @@
     var count = 1;
     var lastClickTime = 0;
 
-    function rainbow(빤짝이_배) {
+    function rainbow() {
         document.querySelector('.rainbow').style.animation = 'rainbow 3s infinite';
         setTimeout(function() {
             document.querySelector('.rainbow').style.animation = 'none';
         }, 3000); // 3초 후에 무지개 색 반짝 효과 사라지게 설정
     }
 
-    function increasecount(카우터_증가) {
+    function increasecount() {
         var currentTime = new Date().getTime();
         if (currentTime - lastClickTime <500) {
             count += 1;
