@@ -6,7 +6,7 @@
 <title>무지개 색 반짝</title>
 <style>
     body {
-        background-color: black;
+        background-color: pink;
         overflow: hidden;
         height: 100vh;
         position: relative;
@@ -48,7 +48,7 @@
     }
 
     .counter {
-        position: absolute;
+        position: relative;
         top: 10px;
         right: 10px;
         font-size: 24px;
@@ -60,6 +60,7 @@
 
 <div class="rainbow"></div>
 <button onclick="startRainbow()">배씨 머리</button>
+<button onclick="startRainbow()">카운터 증가</button>
 <div class="counter">0</div>
 
 <script>
@@ -75,8 +76,8 @@
 
     function increaseCounter() {
         var currentTime = new Date().getTime();
-        if (currentTime - lastClickTime < 3000) {
-            count += 2;
+        if (currentTime - lastClickTime < 500) {
+            count += ㅋㅋ;
             document.querySelector('.counter').textContent = count;
         } else {
             count++;
@@ -85,6 +86,6 @@
         lastClickTime = currentTime;
     }
 </script>
-ㅋㅋㅋㅋ
+왜 옴?
 </body>
 </html>
