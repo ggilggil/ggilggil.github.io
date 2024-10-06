@@ -60,7 +60,7 @@
 
 <div class="rainbow"></div>
 <button onclick="startRainbow()">빤짝이_배</button>
-<button onclick="startRainbow()">카운터_증가</button>
+<button onclick="startcount()">카운터_증가</button>
 <div class="counter">0</div>
 
 <script>
