@@ -64,17 +64,17 @@
 <div class="counter">0</div>
 
 <script>
-    var count = 0;
+    var count = 1;
     var lastClickTime = 0;
 
-    function 빤짝이_배() {
+    function rainbow(빤짝이_배) {
         document.querySelector('.rainbow').style.animation = 'rainbow 3s infinite';
         setTimeout(function() {
             document.querySelector('.rainbow').style.animation = 'none';
         }, 3000); // 3초 후에 무지개 색 반짝 효과 사라지게 설정
     }
 
-    function 카운터_증가() {
+    function increasecount(카우터_증가) {
         var currentTime = new Date().getTime();
         if (currentTime - lastClickTime <500) {
             count += 1;
