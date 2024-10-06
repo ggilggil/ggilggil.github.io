@@ -60,7 +60,7 @@
 
 <div class="rainbow"></div>
 <button onclick="startRainbow()">무지개 색 반짝</button>
-<button onclick="increaseCounter()">카운터 증가</button>
+<button onclick="increaseCounter(1)">배씨</button>
 <div class="counter">0</div>
 
 <script>
@@ -86,7 +86,6 @@
         lastClickTime = currentTime;
     }
 </script>
-
+ㅋㅋㅋㅋ
 </body>
 </html>
-먼지가 되어
